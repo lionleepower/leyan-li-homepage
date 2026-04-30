@@ -1,0 +1,62 @@
+李乐岩
+Email: leyanpower@gmail.com / 3073751449@qq.com
+Phone: +86 18805506898
+GitHub: https://github.com/lionleepower
+---
+University of Edinburgh（爱丁堡大学）
+高性能计算与数据科学 硕士（MSc）
+2025年09月 – 至今（预计2026年09月毕业）
+________________________________________
+University of Liverpool（利物浦大学）
+计算机科学 学士（BSc，一级荣誉学位）
+2023年09月 – 2025年06月
+________________________________________
+西交利物浦大学（Xi’an Jiaotong-Liverpool University）
+信息与计算科学 学士
+2021年09月 – 2023年06月
+---
+Summary
+高性能计算与数据科学硕士在读，具备扎实的并行计算与分布式系统背景。熟练掌握 C/C++、Python、MPI 与 OpenMP，具有在 ARCHER2 超级计算机上进行大规模实验的实践经验。研究兴趣包括可扩展系统、性能优化，以及高性能计算与机器学习的交叉领域。
+---
+Technical Skills：
+C/C++、Python、SQL ; MPI、OpenMP、PETSc、Slurm、ARCHER2; Linux、Git、VS Code, linaro map
+-----
+Projects
+1.	PETSc Benchmark and Performance Analysis Suite
+GitHub: https://github.com/lionleepower/petsc-benchmark-suite
+Developed a reproducible benchmarking framework for analysing PETSc linear solver performance under different parallel configurations.
+Designed automated Slurm job pipelines to conduct strong scaling and hybrid MPI+OpenMP experiments on the ARCHER2 supercomputer.
+Built Python-based analysis tools to process runtime logs, generate CSV datasets, and produce speedup and parallel efficiency visualisations.
+Performed performance analysis comparing MPI-only and hybrid execution models, identifying communication overhead and scalability limits.
+
+2.	HPC Mini Applications (MPI / OpenMP) — in progress
+Implemented a collection of classical high-performance computing mini-applications in C, including:
+•	2D heat diffusion simulation using stencil computation
+•	parallel matrix multiplication
+•	N-body simulation
+Designed MPI-based domain decomposition and halo exchange mechanisms for distributed-memory parallelism.
+Integrated OpenMP thread-level parallelism and evaluated hybrid MPI+OpenMP configurations.
+Conducted scaling experiments to analyse parallel efficiency, load balance, and memory behaviour under different process and thread configurations.
+
+Value Function Factorisation in Multi-Agent Actor-Critic Methods
+Investigated factorised critic architectures (VDN, QMIX) within Multi-Agent Proximal Policy Optimization (MAPPO) to improve coordination in cooperative multi-agent environments.
+Implemented custom MARL algorithms using Python and PyTorch based on the PyMARL / ePyMARL framework.
+Conducted experimental evaluation in Matrix Game and Predator–Prey environments, analysing convergence behaviour and coordination performance.
+Explored improvements to reward shaping and critic factorisation strategies to enhance learning stability.
+-----------------------------------------------------------------------------------------------------------
+Research Experience
+String Art Generator Based on Radon Transform
+Summer Undergraduate Research Programme
+Jun 2024 – Aug 2024
+Developed an algorithmic pipeline that converts images into string-based artwork using Radon transform techniques.
+Implemented image preprocessing and contrast enhancement algorithms to improve feature extraction.
+Designed a parameter control interface enabling interactive adjustment of artistic generation parameters.
+-------------------------------------------------------------------------------------------
+Publication
+Li, Leyan (2024)
+Convolutional Neural Networks (CNNs)-based Medical Image Analysis
+International Conference on Engineering Management, Information Technology and Intelligence (EMITI 2024)
+
+
+
+

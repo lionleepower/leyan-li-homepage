@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Leyan Li personal homepage with resume, notes, and contact information."
+    content="Projects directory for Leyan Li with concise introductions and GitHub links."
   >
-  <title>Leyan Li | Personal Homepage</title>
   <script>
     (function () {
       var savedTheme = localStorage.getItem("theme");
@@ -16,16 +15,17 @@
       }
     }());
   </script>
+  <title>Leyan Li | Projects</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home-page">
+<body>
   <div class="page-shell">
-    <header class="hero minimal-hero">
+    <header class="hero minimal-list-hero">
       <nav class="topbar" aria-label="Primary">
         <div class="brand">Leyan Li</div>
         <div class="topbar-controls">
           <div class="topbar-links">
-            <a href="projects.html">Projects</a>
+            <a href="index.html">Home</a>
             <a href="resume.html">Resume</a>
             <a href="notes.html">Notes</a>
             <a href="#contact">Contact</a>
@@ -33,76 +33,84 @@
           <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
         </div>
       </nav>
-
-      <div class="hero-grid minimal-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Personal Homepage</p>
-          <h1>Leyan Li</h1>
-          <p class="lead lead-compact">University of Edinburgh</p>
-          <p class="lead lead-compact">MSc High Performance Computing with Data Science</p>
-
-          <div class="hero-actions">
-            <a class="button button-primary" href="projects.html">Projects</a>
-            <a class="button button-secondary" href="resume.html">Resume</a>
-            <a class="button button-secondary" href="notes.html">Notes</a>
-            <a class="button button-secondary" href="mailto:leyanpower@gmail.com">Email</a>
-          </div>
-        </div>
-
-        <aside class="hero-panel minimal-panel" aria-label="Background and contact">
-          <p class="panel-label">Education</p>
-          <p class="panel-text">University of Edinburgh</p>
-          <p class="panel-text">MSc High Performance Computing with Data Science</p>
-
-          <p class="panel-label contact-label">Contact</p>
-          <div class="contact-stack">
-            <a href="mailto:leyanpower@gmail.com">leyanpower@gmail.com</a>
-            <a href="https://github.com/lionleepower" target="_blank" rel="noreferrer">github.com/lionleepower</a>
-          </div>
-        </aside>
-      </div>
     </header>
 
     <main>
-      <section class="section minimal-section">
+      <section class="section minimal-list-section">
         <div class="section-heading">
-          <p class="section-kicker">Pages</p>          
+          <p class="section-kicker">Projects</p>
+          <h2>Completed</h2>
         </div>
 
-        <div class="card-grid compact-grid three-col-grid">
+        <div class="card-grid compact-grid two-col-grid">
           <article class="card note-card">
-            <h3>Projects</h3>
-            <p>Project directory with short descriptions and direct links to GitHub repositories.</p>
+            <h3>PETSc Benchmark and Performance Analysis Suite</h3>
+            <p>
+              Reproducible benchmarking workflow for PETSc linear solvers with Slurm
+              pipelines, scaling experiments, and Python-based performance analysis.
+            </p>
             <div class="inline-links">
-              <a href="projects.html">Open Projects</a>
+              <a href="https://github.com/lionleepower/petsc-benchmark-suite" target="_blank" rel="noreferrer">Open on GitHub</a>
             </div>
           </article>
 
           <article class="card note-card">
-            <h3>Resume</h3>
-            <p>Education background, technical skills, project experience, research, and publication details.</p>
+            <h3>examTool</h3>
+            <p>
+              A practical utility project from your GitHub workspace, linked here as a
+              direct repository entry.
+            </p>
             <div class="inline-links">
-              <a href="resume.html">Open Resume</a>
+              <a href="https://github.com/lionleepower/examTool" target="_blank" rel="noreferrer">Open on GitHub</a>
             </div>
           </article>
+        </div>
+      </section>
 
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Projects</p>
+          <h2>In Progress</h2>
+        </div>
+
+        <div class="card-grid compact-grid two-col-grid">
           <article class="card note-card">
-            <h3>Notes</h3>
-            <p>Technical reflections, learning logs, and short writing on HPC, distributed systems, and ML systems.</p>
-            <div class="inline-links">
-              <a href="notes.html">Open Notes</a>
-            </div>
+            <h3>HPC Mini Applications</h3>
+            <p>
+              A growing set of MPI and OpenMP mini-applications for studying scaling,
+              decomposition, and hybrid parallel execution.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Projects</p>
+          <h2>Planned</h2>
+        </div>
+
+        <div class="card-grid compact-grid two-col-grid">
+          <article class="card note-card">
+            <h3>Project Case Study Pages</h3>
+            <p>
+              Future work to add compact writeups with benchmark figures, hardware
+              context, and implementation notes for selected projects.
+            </p>
           </article>
         </div>
       </section>
     </main>
 
     <footer class="footer" id="contact">
-      <p class="footer-label">Contact</p>
-      <div class="contact-list compact-contact-list">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2>Leyan Li</h2>
+      </div>
+      <div class="contact-list">
         <a href="mailto:leyanpower@gmail.com">leyanpower@gmail.com</a>
         <a href="https://github.com/lionleepower" target="_blank" rel="noreferrer">github.com/lionleepower</a>
-        <span>University of Edinburgh</span>
+        <a href="resume.html">Resume</a>
       </div>
     </footer>
   </div>

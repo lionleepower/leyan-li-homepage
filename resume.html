@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Resume of Leyan Li, focused on high performance computing, distributed systems, and machine learning systems."
+  >
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    }());
+  </script>
+  <title>Leyan Li | Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero minimal-list-hero">
+      <nav class="topbar" aria-label="Primary">
+        <div class="brand">Leyan Li</div>
+        <div class="topbar-controls">
+          <div class="topbar-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="notes.html">Notes</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Resume</p>
+          <h2>Profile</h2>
+        </div>
+        <div class="about-grid">
+          <p>
+            MSc student in High Performance Computing with Data Science at the University
+            of Edinburgh, with project experience across parallel computing, distributed
+            execution, performance analysis, and machine learning systems.
+          </p>
+          <p>
+            My interests sit at the intersection of high performance computing,
+            performance optimisation, and reliable system design for computationally
+            demanding workloads.
+          </p>
+        </div>
+        <div class="inline-links">
+          <a href="cv_old.txt">Open Source CV Notes</a>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Resume</p>
+          <h2>Education</h2>
+        </div>
+        <div class="timeline">
+          <article class="card timeline-card">
+            <div class="card-topline">
+              <span class="tag">2025 to 2026 expected</span>
+              <span class="metric">Edinburgh</span>
+            </div>
+            <h3>University of Edinburgh</h3>
+            <p>MSc High Performance Computing with Data Science</p>
+          </article>
+
+          <article class="card timeline-card">
+            <div class="card-topline">
+              <span class="tag">2023 to 2025</span>
+              <span class="metric">First Class Honours</span>
+            </div>
+            <h3>University of Liverpool</h3>
+            <p>BSc Computer Science</p>
+          </article>
+
+          <article class="card timeline-card">
+            <div class="card-topline">
+              <span class="tag">2021 to 2023</span>
+              <span class="metric">XJTLU</span>
+            </div>
+            <h3>Xi'an Jiaotong-Liverpool University</h3>
+            <p>Information and Computing Science</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Resume</p>
+          <h2>Skills</h2>
+        </div>
+        <div class="card-grid compact-grid">
+          <article class="card note-card">
+            <h3>Languages</h3>
+            <p>C/C++, Python, SQL</p>
+          </article>
+          <article class="card note-card">
+            <h3>Parallel and HPC</h3>
+            <p>MPI, OpenMP, PETSc, Slurm, ARCHER2</p>
+          </article>
+          <article class="card note-card">
+            <h3>Tools</h3>
+            <p>Linux, Git, VS Code, Linaro MAP</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Resume</p>
+          <h2>Projects</h2>
+        </div>
+        <div class="project-detail-stack">
+          <article class="card project-detail-card">
+            <div class="card-topline">
+              <span class="tag">PETSc</span>
+              <span class="metric">Performance analysis</span>
+            </div>
+            <h3>PETSc Benchmark and Performance Analysis Suite</h3>
+            <ul class="detail-list">
+              <li>Developed a reproducible benchmarking framework for PETSc linear solvers.</li>
+              <li>Designed Slurm job pipelines for strong scaling and hybrid MPI plus OpenMP experiments on ARCHER2.</li>
+              <li>Built Python tools to transform runtime logs into CSV datasets and efficiency visualisations.</li>
+            </ul>
+            <div class="inline-links">
+              <a href="https://github.com/lionleepower/petsc-benchmark-suite" target="_blank" rel="noreferrer">GitHub Repository</a>
+            </div>
+          </article>
+
+          <article class="card project-detail-card">
+            <div class="card-topline">
+              <span class="tag">MPI and OpenMP</span>
+              <span class="metric">In progress</span>
+            </div>
+            <h3>HPC Mini Applications</h3>
+            <ul class="detail-list">
+              <li>Implemented mini-applications including heat diffusion, matrix multiplication, and N-body simulation.</li>
+              <li>Designed MPI-based domain decomposition and halo exchange for distributed-memory parallelism.</li>
+              <li>Evaluated hybrid execution for parallel efficiency, load balance, and memory behaviour.</li>
+            </ul>
+          </article>
+
+          <article class="card project-detail-card">
+            <div class="card-topline">
+              <span class="tag">MARL</span>
+              <span class="metric">PyTorch and ePyMARL</span>
+            </div>
+            <h3>Value Function Factorisation in Multi-Agent Actor-Critic Methods</h3>
+            <ul class="detail-list">
+              <li>Investigated VDN and QMIX-style critic designs within MAPPO-style learning.</li>
+              <li>Implemented experimental variants using Python and PyTorch on top of PyMARL and ePyMARL.</li>
+              <li>Analysed coordination and convergence in Matrix Game and Predator-Prey environments.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section split-section">
+        <div>
+          <p class="section-kicker">Resume</p>
+          <h2>Research</h2>
+          <p>
+            Summer Undergraduate Research Programme, June 2024 to August 2024.
+          </p>
+        </div>
+        <div class="card resume-card">
+          <h3>String Art Generator Based on Radon Transform</h3>
+          <ul class="detail-list">
+            <li>Developed an algorithmic pipeline that converts images into string-based artwork.</li>
+            <li>Implemented preprocessing and contrast enhancement to improve feature extraction.</li>
+            <li>Designed a parameter control interface for interactive artistic generation.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section split-section">
+        <div>
+          <p class="section-kicker">Resume</p>
+          <h2>Publication</h2>
+        </div>
+        <div class="card resume-card">
+          <h3>CNN-based Medical Image Analysis</h3>
+          <p>
+            Li, Leyan (2024), presented at the International Conference on Engineering
+            Management, Information Technology and Intelligence (EMITI 2024).
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2>Leyan Li</h2>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:leyanpower@gmail.com">leyanpower@gmail.com</a>
+        <a href="mailto:3073751449@qq.com">3073751449@qq.com</a>
+        <a href="https://github.com/lionleepower" target="_blank" rel="noreferrer">github.com/lionleepower</a>
+        <span>+86 18805506898</span>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (function () {
+      var toggle = document.getElementById("theme-toggle");
+      if (!toggle) return;
+
+      function syncLabel() {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        toggle.textContent = dark ? "☀" : "☾";
+        toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      }
+
+      toggle.addEventListener("click", function () {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        if (dark) {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+        syncLabel();
+      });
+
+      syncLabel();
+    }());
+  </script>
+</body>
+</html>

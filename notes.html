@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Notes directory for Leyan Li, linking to technical writing and learning logs."
+  >
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    }());
+  </script>
+  <title>Leyan Li | Notes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero minimal-list-hero">
+      <nav class="topbar" aria-label="Primary">
+        <div class="brand">Leyan Li</div>
+        <div class="topbar-controls">
+          <div class="topbar-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Notes</p>
+          <h2>Completed</h2>
+        </div>
+
+        <div class="card-grid compact-grid two-col-grid">
+          <article class="card note-card">
+            <h3>How I Think About Strong Scaling in MPI Workloads</h3>
+            <p>
+              A short note on how I read strong scaling results, and why efficiency and
+              communication cost matter as much as runtime.
+            </p>
+            <div class="inline-links">
+              <a href="note-strong-scaling.html">Read Note</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Notes</p>
+          <h2>In Progress</h2>
+        </div>
+
+        <div class="card-grid compact-grid two-col-grid">
+          <article class="card note-card">
+            <h3>PETSc Benchmarking on ARCHER2</h3>
+            <p>
+              A future note on what performance measurements revealed across MPI-only
+              and hybrid configurations.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section minimal-list-section">
+        <div class="section-heading">
+          <p class="section-kicker">Notes</p>
+          <h2>Planned</h2>
+        </div>
+
+        <div class="card-grid compact-grid two-col-grid">
+          <article class="card note-card">
+            <h3>Weekly Learning Log</h3>
+            <p>
+              A lightweight recurring note format for recording experiments, problems,
+              and next steps.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2>Leyan Li</h2>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:leyanpower@gmail.com">leyanpower@gmail.com</a>
+        <a href="https://github.com/lionleepower" target="_blank" rel="noreferrer">github.com/lionleepower</a>
+        <a href="resume.html">Resume</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (function () {
+      var toggle = document.getElementById("theme-toggle");
+      if (!toggle) return;
+
+      function syncLabel() {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        toggle.textContent = dark ? "☀" : "☾";
+        toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      }
+
+      toggle.addEventListener("click", function () {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        if (dark) {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+        syncLabel();
+      });
+
+      syncLabel();
+    }());
+  </script>
+</body>
+</html>

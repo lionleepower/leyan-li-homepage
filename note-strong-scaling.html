@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="A note by Leyan Li on how to interpret strong scaling in MPI workloads."
+  >
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    }());
+  </script>
+  <title>Leyan Li | Strong Scaling Note</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero resume-hero">
+      <nav class="topbar" aria-label="Primary">
+        <div class="brand">Leyan Li</div>
+        <div class="topbar-controls">
+          <div class="topbar-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="notes.html">Notes</a>
+            <a href="resume.html">Resume</a>
+          </div>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Note</p>
+          <h1>How I Think About Strong Scaling in MPI Workloads</h1>
+          <p class="lead">
+            Strong scaling is not just about whether runtime decreases. It is about how
+            much useful work remains per process once communication, synchronisation,
+            and load imbalance start to dominate.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="notes.html">Back to Notes</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Quick summary">
+          <p class="panel-label">Quick Summary</p>
+          <ul class="focus-list">
+            <li>Speedup should be read together with efficiency</li>
+            <li>Communication cost matters more as process count grows</li>
+            <li>Scaling curves help explain system limits, not only successes</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section reading-section">
+        <div class="section-heading">
+          <p class="section-kicker">Context</p>
+          <h2>Why strong scaling can be misleading at first glance</h2>
+        </div>
+        <div class="reading-copy">
+          <p>
+            When I first look at a strong scaling result, the most obvious question is
+            whether runtime goes down as I increase the number of processes. That is a
+            useful first check, but it is not enough. A faster runtime can still hide
+            poor efficiency if the added parallel resources are not being used well.
+          </p>
+          <p>
+            In MPI workloads, each increase in process count usually reduces the amount
+            of local computation per rank, while communication and synchronisation do
+            not shrink in the same way. That imbalance means the computation-to-
+            communication ratio gradually worsens as the job scales.
+          </p>
+        </div>
+      </section>
+
+      <section class="section reading-section">
+        <div class="section-heading">
+          <p class="section-kicker">What I Look For</p>
+          <h2>Three signals that matter more than raw runtime</h2>
+        </div>
+        <div class="reading-copy">
+          <p>
+            First, I check parallel efficiency, not only speedup. If runtime is
+            improving but efficiency falls sharply, that often means the program is
+            approaching a scaling limit.
+          </p>
+          <p>
+            Second, I look for where the curve bends. A noticeable flattening usually
+            suggests that communication overhead, idle time, or synchronisation has
+            started to offset the benefit of adding more processes.
+          </p>
+          <p>
+            Third, I think about the workload itself. Some problems are simply too small
+            to benefit from aggressive scaling, even if the implementation is sound.
+            Good results depend not only on code quality, but also on choosing a problem
+            size that matches the hardware and the decomposition strategy.
+          </p>
+        </div>
+      </section>
+
+      <section class="section reading-section">
+        <div class="section-heading">
+          <p class="section-kicker">Takeaway</p>
+          <h2>Scaling results should explain behaviour, not just report numbers</h2>
+        </div>
+        <div class="reading-copy">
+          <p>
+            The main lesson I take from strong scaling experiments is that they are most
+            useful when they help explain where performance stops improving and why.
+            Good analysis is not just a table of runtimes. It is an argument about the
+            system behaviour underneath those numbers.
+          </p>
+          <p>
+            That is why I prefer to pair scaling plots with comments on communication
+            cost, decomposition choices, and efficiency trends. The interesting part is
+            not only that the program scaled to a certain process count, but what the
+            curve reveals about the design of the workload itself.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2>Open to discussion on systems and performance.</h2>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:leyanpower@gmail.com">leyanpower@gmail.com</a>
+        <a href="https://github.com/lionleepower" target="_blank" rel="noreferrer">github.com/lionleepower</a>
+        <a href="notes.html">Back to Notes</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (function () {
+      var toggle = document.getElementById("theme-toggle");
+      if (!toggle) return;
+
+      function syncLabel() {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        toggle.textContent = dark ? "☀" : "☾";
+        toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      }
+
+      toggle.addEventListener("click", function () {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        if (dark) {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+        syncLabel();
+      });
+
+      syncLabel();
+    }());
+  </script>
+</body>
+</html>
